@@ -3,13 +3,14 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import SnackbarContent from '@material-ui/core/SnackbarContent';
 
 const CustomTableCell = withStyles(theme => ({
     head: {
@@ -32,7 +33,7 @@ const styles = theme => ({
     },
     row: {
         '&:nth-of-type(odd)': {
-            backgroundColor:theme.palette.background.default
+            backgroundColor: theme.palette.background.default
         },
     },
 });
@@ -40,58 +41,48 @@ const styles = theme => ({
 let id = 0;
 function createData(name, date, hour) {
     id += 1;
-    return { id, name, date, hour};
+    return {id, name, date, hour};
 }
 
 const data = [
-    createData('Equipo 2 vs Equipo 3', 'Agosto 9', '5:00pm'),
-    createData('Equipo 4 vs Equipo 1', 'Agosto 9', '6:00pm'),
+    createData('Chicharrones FC vs Equipo 3', 'Agosto 09', '5:00 pm'),
+    createData('Mean Machine vs Kronos', 'Agosto 09', '6:00 pm'),
 
-    createData('Equipo 1 vs Equipo 2', 'Agosto 16', '5:00pm'),
-    createData('Equipo 3 vs Equipo 4', 'Agosto 16', '6:00pm'),
+    createData('Kronos vs Chicharrones FC', 'Agosto 16', '5:00 pm'),
+    createData('Equipo 3 vs Mean Machine', 'Agosto 16', '6:00 pm'),
 
-    createData('Equipo 4 vs Equipo 2', 'Agosto 23', '5:00pm'),
-    createData('Equipo 3 vs Equipo 1', 'Agosto 23', '6:00pm'),
+    createData('Mean Machine vs Chicharrones FC', 'Agosto 23', '5:00 pm'),
+    createData('Equipo 3 vs Kronos', 'Agosto 23', '6:00 pm'),
 
-    createData('Equipo 2 vs Equipo 1', 'Agosto 30', '5:00pm'),
-    createData('Equipo 4 vs Equipo 3', 'Agosto 30', '6:00pm'),
+    createData('Chicharrones FC vs Kronos', 'Agosto 30', '5:00 pm'),
+    createData('Mean Machine vs Equipo 3', 'Agosto 30', '6:00 pm'),
 
-    createData('Equipo 3 vs Equipo 1', 'September 6', '5:00pm'),
-    createData('Equipo 2 vs Equipo 4', 'September 6', '6:00pm'),
+    createData('Equipo 3 vs Kronos', 'September 06', '5:00 pm'),
+    createData('Chicharrones FC vs Mean Machine', 'September 06', '6:00 pm'),
 
-    createData('Equipo 2 vs Equipo 4', 'September 13', '5:00pm'),
-    createData('Equipo 1 vs Equipo 3', 'September 13', '6:00pm'),
+    createData('Chicharrones FC vs Mean Machine', 'September 13', '5:00 pm'),
+    createData('Kronos vs Equipo 3', 'September 13', '6:00 pm'),
 
 ];
 
 function CalendarComponent(props) {
-    const { classes } = props;
+    const {classes} = props;
 
     return (
-        <Paper className={classes.root}>
-            <Table className={classes.table}>
-                <TableHead>
-                    <TableRow>
-                        <CustomTableCell>Match</CustomTableCell>
-                        <CustomTableCell>Date</CustomTableCell>
-                        <CustomTableCell>Hour</CustomTableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {data.map(n => {
-                        return (
-                            <TableRow className={classes.row} key={n.id}>
-                                <CustomTableCell component="th" scope="row">
-                                    {n.name}
-                                </CustomTableCell>
-                                <CustomTableCell>{n.date}</CustomTableCell>
-                                <CustomTableCell>{n.hour}</CustomTableCell>
-                            </TableRow>
-                        );
-                    })}
-                </TableBody>
-            </Table>
-        </Paper>
+        <div className="calendar-div">
+            {data.map(n => {
+                return (
+                    <SnackbarContent className={classes.snackbar}
+                                     message={
+                                         <div>
+                                             <span className="math-span">{n.name}</span>
+                                             <span className="math-date">{n.date}</span>
+                                             <span className="math-hour">{n.hour}</span>
+                                         </div>
+                                     }/>
+                );
+            })}
+        </div>
     );
 }
 

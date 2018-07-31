@@ -44,10 +44,10 @@ function createData(name, wp, w, d, l,gp,gn, gd, pts) {
 }
 
 const data = [
-    createData('Equipo 1', 0, 0, 0, 0,0, 0,0, 0),
-    createData('Equipo 2',  0, 0, 0, 0,0, 0,0, 0),
+    createData('Kronos', 0, 0, 0, 0,0, 0,0, 0),
+    createData('Chicharrones FC',  0, 0, 0, 0,0, 0,0, 0),
     createData('Equipo 3',  0, 0, 0, 0,0, 0,0, 0),
-    createData('Equipo 4',  0, 0, 0, 0,0, 0,0, 0),
+    createData('Mean Machine',  0, 0, 0, 0,0, 0,0, 0),
 ];
 
 function CustomizedTable(props) {
@@ -60,12 +60,12 @@ function CustomizedTable(props) {
                     <TableRow>
                         <CustomTableCell numeric>#</CustomTableCell>
                         <CustomTableCell>Team</CustomTableCell>
-                        <CustomTableCell numeric>P</CustomTableCell>
+                        <CustomTableCell numeric>GP</CustomTableCell>
                         <CustomTableCell numeric>W</CustomTableCell>
                         <CustomTableCell numeric>D</CustomTableCell>
                         <CustomTableCell numeric>L</CustomTableCell>
-                        <CustomTableCell numeric>GP</CustomTableCell>
-                        <CustomTableCell numeric>GN</CustomTableCell>
+                        <CustomTableCell numeric>GF</CustomTableCell>
+                        <CustomTableCell numeric>GA</CustomTableCell>
                         <CustomTableCell numeric>GD</CustomTableCell>
                         <CustomTableCell numeric>PTS</CustomTableCell>
                     </TableRow>

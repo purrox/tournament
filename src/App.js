@@ -6,6 +6,7 @@ import CalendarComponent from './components/Calendar';
 import MenuComponent from './components/menu.component';
 import LabelBottomNavigation from './components/LabelBottomNavigation.js';
 import CustomizedTable from './components/CustomTableCell';
+import Stats from './components/stats';
 import {Route, Switch} from 'react-router-dom';
 import {BrowserRouter as Router} from 'react-router-dom';
 
@@ -23,6 +24,7 @@ class App extends Component {
                             <Route exact path="/" component={MenuComponent}/>
                             <Route path="/home" component={CustomizedTable}/>
                             <Route path="/calendar" component={CalendarComponent}/>
+                            <Route path="/stats" component={Stats}/>
                         </div>
                 </div>
             </Router>

@@ -46,20 +46,20 @@ class LabelBottomNavigation extends Component {
                         root: classes.button,
                         selected: classes.selected,
                     }}
-                    showLabel={true} label="Posiciones" value="home" icon={<Icon>table_chart</Icon>}
+                    showLabel={true} label="Standings" value="home" icon={<Icon>table_chart</Icon>}
                 />
                 <BottomNavigationAction
                     classes={{
                         root: classes.button,
                         selected: classes.selected,
                     }}
-                    showLabel={true} label="Calendario" value="calendar" icon={<Icon>event_note</Icon>}/>
+                    showLabel={true} label="Calendar" value="calendar" icon={<Icon>event_note</Icon>}/>
                 <BottomNavigationAction
                     classes={{
                         root: classes.button,
                         selected: classes.selected,
                     }}
-                    showLabel={true} label="Estadisticas" value="stats" icon={<Icon>list_alt</Icon>}/>
+                    showLabel={true} label="Stats" value="stats" icon={<Icon>list_alt</Icon>}/>
             </BottomNavigation>
         );
     }
